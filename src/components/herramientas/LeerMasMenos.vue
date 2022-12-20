@@ -1,5 +1,5 @@
 <template>
-  <div class="dai-leer-mas-menos">
+  <div class="sisdai-leer-mas-menos">
     <div class="texto-corto">
       <slot name="texto-corto" />
     </div>
@@ -54,7 +54,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.dai-leer-mas-menos {
+.sisdai-leer-mas-menos {
   .texto-corto {
     * {
       margin-bottom: 0;

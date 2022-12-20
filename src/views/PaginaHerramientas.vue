@@ -177,7 +177,7 @@
 
         <div v-highlight>
           <pre class="language-css"><code>&lt;style scoped lang="scss">
-  .dai-leer-mas-menos {
+  .sisdai-leer-mas-menos {
     .texto-corto {
       * {
         margin-bottom: 0;
