@@ -1,8 +1,9 @@
 <template>
   <div id="btn_descarga">
     <a class="boton-descarga"
+      :class="{'text-none-decoration': !tieneVistaSimplificada}"
       :href="url_descarga"
-      download="comunidad-involucrada-en-adaptacion-y-mitigacion-de-sargazo-en-mexico-y-otros-paises.zip"
+      :download="`${url_descarga}.zip`"
     >
       <p class="titulo">{{ titulo }}</p>
       <div class="descripcion">
@@ -30,13 +31,20 @@ export default {
       default: 'Tenetur molestias iusto ducimus cumque eligendi quod, porro quos iste facere ut, eum veritatis debitis voluptate nemo sunt obcaecati.'
     }
   },
+  computed: {
+    tieneVistaSimplificada() {
+      return this.$store.getters.tieneVistaSimplificada;
+    },
+  },
 }
 </script>
 
 <style lang="scss" scoped>
 #btn_descarga {
   .boton-descarga {
-    text-decoration: none;
+    &.text-none-decoration {
+      text-decoration: none;
+    }
   }
 }
 </style>
