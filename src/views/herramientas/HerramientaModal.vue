@@ -326,7 +326,7 @@
               <span class="icono-angulo-izquierdo"></span>
             </button>
             <div class="imagen">
-              <img class="imagen-prueba" src="@/assets/img/02_salinidad_superficial.jpg" alt="">
+              <img class="imagen-prueba" src="https://placekitten.com/792/1024" alt="">
             </div>
             <button class="boton-icono boton-terciario">
               <span class="icono-angulo-derecho"></span>
@@ -354,7 +354,7 @@
         <div class="cuerpo-modal">
           <div class="carrusel-cuerpo">
             <div class="imagen">
-              <img class="imagen-prueba" src="@/assets/img/02_salinidad_superficial.jpg" alt="">
+              <img class="imagen-prueba" src="https://placekitten.com/792/1024" alt="">
             </div>
           </div>
           <div class="imagen-info">
