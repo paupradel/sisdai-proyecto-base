@@ -47,4 +47,8 @@ export default {
 
 <style lang="scss">
   @import 'node_modules/sisdai-css/src/eni.scss';
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
 </style>
