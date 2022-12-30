@@ -4,6 +4,7 @@
       <slot name="menu"></slot>
     </div>
     <div class="columna-12 columna-7-mov">
+      <slot name="vista-detalle"></slot>
       <slot name="vista"></slot>
     </div>
   </div>
