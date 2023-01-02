@@ -38,6 +38,28 @@ const routes = [
   {
     path: '/herramientas',
     name: 'Herramientas',
+    children: [
+      {
+        path: '/herramientas/intro',
+        name: 'Introducción: Herramientas',
+        component: () => import('@/views/PaginaHerramientasDetalle.vue')
+      },
+      {
+        path: '/herramientas/modal',
+        name: 'Herramientas: Modal',
+        component: () => import('@/views/herramientas/HerramientaModal.vue')
+      },
+      {
+        path: '/herramientas/boton-descarga',
+        name: 'Herramientas: BotonDescarga',
+        component: () => import('@/views/herramientas/HerramientaBotonDescarga.vue')
+      },
+      {
+        path: '/herramientas/leer-mas-menos',
+        name: 'Componente: LeerMasMenos',
+        component: () => import('@/views/herramientas/HerramientaLeerMasMenos.vue')
+      },
+    ],
     component: () => import('../views/PaginaHerramientas.vue')
   },
   {
