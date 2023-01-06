@@ -69,6 +69,7 @@ const accesibilidad = {
     tipografia_accesible: false,
     vista_simplificada: false,
     enlaces_subrayados: false,
+    tamanio_fuente: 16
   },
   getters: {
     esteMenuAccesibilidadAbierto(state) {
@@ -97,10 +98,29 @@ const accesibilidad = {
     alternarEnlacesSubrayados(state) {
       state.enlaces_subrayados = !state.enlaces_subrayados;
     },
+    incrementarFuente(state) {
+      if(state.tamanio_fuente > 47) {
+        state.tamanio_fuente = 48;
+      } else {
+        state.tamanio_fuente++;
+      }
+      let tamanio_arriba = `${state.tamanio_fuente}px`
+      document.documentElement.style.setProperty('--tipografia-tamanio',tamanio_arriba)
+    },
+    reducirFuente(state) {
+      if(state.tamanio_fuente < 2) {
+        state.tamanio_fuente = 1;
+      } else {
+        state.tamanio_fuente--;
+      }
+      let tamanio_abajo = `${state.tamanio_fuente}px`
+      document.documentElement.style.setProperty('--tipografia-tamanio',tamanio_abajo)
+    },
     limpiarClasesAccesibles(state) {
       state.tipografia_accesible = false;
       state.vista_simplificada = false;
       state.enlaces_subrayados = false;
+      document.documentElement.style.setProperty('--tipografia-tamanio','16');
     }
   }
 }

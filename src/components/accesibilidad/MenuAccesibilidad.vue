@@ -28,6 +28,16 @@
         <span>Enlaces subrayados</span>
       </button>
       <button class="boton-accesibilidad" 
+        @click="incrementarFuente">
+        <!-- <span class="icono-restablecer icono-4"></span> -->
+        <span>Incrementar fuente</span>
+      </button>
+      <button class="boton-accesibilidad" 
+        @click="reducirFuente">
+        <!-- <span class="icono-restablecer icono-4"></span> -->
+        <span>Disminuir fuente</span>
+      </button>
+      <button class="boton-accesibilidad" 
         @click="limpiarClasesAccesibles">
         <span class="icono-restablecer icono-4"></span>
         <span>Restablecer</span>
@@ -56,6 +66,12 @@
       },
       alternarEnlacesSubrayados() {
         this.$store.commit('alternarEnlacesSubrayados');
+      },
+      incrementarFuente() {
+        this.$store.commit('incrementarFuente');
+      },
+      reducirFuente() {
+        this.$store.commit('reducirFuente');
       },
       limpiarClasesAccesibles() {
         this.$store.commit('limpiarClasesAccesibles');
@@ -125,7 +141,7 @@
     &.abierto {
       padding: 8px 0;
       width: 200px;
-      max-height: 270px;
+      max-height: 500px;
       margin-right: 8px;
       margin-bottom: 8px;
     }
