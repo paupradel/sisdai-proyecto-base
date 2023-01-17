@@ -31,11 +31,6 @@ const routes = [
     component: () => import('../views/PaginaPreguntasFrecuentes.vue')
   },
   {
-    path: '/ayuda',
-    name: 'Ayuda de Accesibilidad',
-    component: () => import('../views/AccesibilidadAyuda.vue')
-  },
-  {
     path: '/herramientas',
     name: 'Herramientas',
     children: [
