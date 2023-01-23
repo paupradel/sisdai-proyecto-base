@@ -36,7 +36,7 @@ export default {
   computed: {
     a11yClass() {
       return {
-        'a11y-tipografia': this.$store.getters.tieneTipografiaAccesible,
+        'a11y-tipografia': this.$store.getters.tieneTipografiaAtkinson,
         'a11y-simplificada': this.$store.getters.tieneVistaSimplificada,
         'a11y-hipervinculos': this.$store.getters.tieneEnlacesSubrayados,
       };
