@@ -66,7 +66,7 @@ const accesibilidad = {
   namespaced: false,
   state: {
     menu_accesibilidad_abierto: false,
-    tipografia_accesible: false,
+    tipografia_atkinson: false,
     vista_simplificada: false,
     enlaces_subrayados: false,
     tamanio_fuente: 16
@@ -75,8 +75,8 @@ const accesibilidad = {
     esteMenuAccesibilidadAbierto(state) {
       return state.menu_accesibilidad_abierto;
     },
-    tieneTipografiaAccesible(state) {
-      return state.tipografia_accesible;
+    tieneTipografiaAtkinson(state) {
+      return state.tipografia_atkinson;
     },
     tieneVistaSimplificada(state) {
       return state.vista_simplificada;
@@ -89,8 +89,8 @@ const accesibilidad = {
     alternarMenuAccesibilidad(state) {
       state.menu_accesibilidad_abierto = !state.menu_accesibilidad_abierto;
     },
-    alternarTipografiaAccesible(state) {
-      state.tipografia_accesible = !state.tipografia_accesible;
+    alternarTipografiaAtkinson(state) {
+      state.tipografia_atkinson = !state.tipografia_atkinson;
     },
     alternarVistaSimplificada(state) {
       state.vista_simplificada = !state.vista_simplificada;
@@ -117,7 +117,7 @@ const accesibilidad = {
       document.documentElement.style.setProperty('--tipografia-tamanio',tamanio_abajo)
     },
     limpiarClasesAccesibles(state) {
-      state.tipografia_accesible = false;
+      state.tipografia_atkinson = false;
       state.vista_simplificada = false;
       state.enlaces_subrayados = false;
       document.documentElement.style.setProperty('--tipografia-tamanio','16');

@@ -13,9 +13,9 @@
       @click="alternarMenuAccesibilidad">
       <p class="titulo-accesibilidad">Herramientas de accesibilidad</p>
       <button class="boton-accesibilidad" 
-        @click="alternarTipografiaAccesible">
+        @click="alternarTipografiaAtkinson">
         <span class="icono-cambio-tipografia icono-4"></span>
-        <span>Tipografia accesible</span>
+        <span>Cambio de fuente</span>
       </button>
       <button class="boton-accesibilidad" 
         @click="alternarVistaSimplificada">
@@ -58,8 +58,8 @@
       alternarMenuAccesibilidad() {
         this.$store.commit('alternarMenuAccesibilidad');
       },
-      alternarTipografiaAccesible() {
-        this.$store.commit('alternarTipografiaAccesible');
+      alternarTipografiaAtkinson() {
+        this.$store.commit('alternarTipografiaAtkinson');
       },
       alternarVistaSimplificada() {
         this.$store.commit('alternarVistaSimplificada');
