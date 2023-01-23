@@ -1,9 +1,13 @@
 <template>
   <div>
-    <PortadaCover
-      :esCapitulo="true"
-    /> <!-- TODO:pendiente de revisión -->
-    
+    <div class="contenedor-portada" style="height: 90vh">
+      <img class="portada" src="http://placekitten.com/970/979" />
+      <div class="degradado-negro-abajo">
+        <div class="contenido-abajo">
+          <p class="titulo-eni texto-color-1 texto-centrado">Título de ENI</p>
+        </div>
+      </div>
+    </div>
     <div class="contenedor ancho-lectura m-y-10">
       <p class="titulo-pagina">Inicio</p>
     </div>
@@ -11,11 +15,7 @@
 </template>
 
 <script>
-import PortadaCover from '@/components/herramientas/PortadaCover.vue';
 export default {
   name: 'PaginaInicio',
-  components: {
-    PortadaCover,
-  },
 }
 </script>
