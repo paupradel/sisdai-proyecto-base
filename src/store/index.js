@@ -27,8 +27,10 @@ const navegacion = {
       return state.navegacion_submenu_abierto;
     },
 
-    cdnArchivosSargazo(state) {
-      return `${state.cdn_archivos_dominio}/enis/energia/sargazo`;
+    cdnArchivos(state) {
+      // Aquí puedes completar la ruta para el cdn. El dominio ddepende del ambiente, 
+      // pero la ruta a los archivos deberá coincidir en ambos dominios
+      return `${state.cdn_archivos_dominio}/`;
     },
 
     versionProyecto(state) {
