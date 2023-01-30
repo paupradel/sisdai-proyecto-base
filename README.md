@@ -5,9 +5,11 @@ el Sistema de Diseño y Accesibilidad para la Investigación (Sisdai).
 
 > **_Limitación de responsabilidad_**
 >
-> El presente es un proyecto en construcción, por tanto Conacyt no es responsable del uso y contenido del presente
-> recurso, toda vez que se trata de una versión en su modalidad prueba, y no de una versión pública, por lo que una vez
-> que sea lanzada la versión final, se invita a la persona usuaria a consultarla y validar sus requisitos.
+> El presente es un proyecto en construcción, por tanto ni el equipo del Sisdai 
+> ni el de Salsa son responsables del uso y contenido del presente recurso, 
+> toda vez que se trata de una versión en su modalidad prueba, y no de una 
+> versión pública, por lo que una vez que sea lanzada la versión final, 
+> se invita a la persona usuaria a consultarla y validar sus requisitos.
 
 
 ## Uso local
