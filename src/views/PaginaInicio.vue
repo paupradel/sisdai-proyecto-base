@@ -1,7 +1,10 @@
 <template>
   <div>
     <div class="contenedor-portada">
-      <img class="portada" src="http://placekitten.com/970/980" />
+      <img
+        class="portada"
+        src="http://placekitten.com/970/980"
+      />
       <div class="degradado-negro-abajo">
         <div class="contenido-abajo">
           <div class="contenedor ancho-fijo">
@@ -21,23 +24,23 @@ export default {
   name: 'PaginaInicio',
   methods: {
     calHeight() {
-      const innerheight = window.innerHeight / 100;
+      const innerheight = window.innerHeight / 100
       document
-        .querySelector(":root")
-        .style.setProperty("--vh", `${innerheight.toString()}px`);
-    }
+        .querySelector(':root')
+        .style.setProperty('--vh', `${innerheight.toString()}px`)
+    },
   },
   created() {
-    this.calHeight();
+    this.calHeight()
   },
   mounted() {
-    window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("resize", this.calHeight);
+    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.calHeight)
   },
   beforeUnmount() {
-    window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("resize", this.calHeight);
-  }
+    window.addEventListener('scroll', this.onScroll)
+    window.addEventListener('resize', this.calHeight)
+  },
 }
 </script>
 

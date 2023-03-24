@@ -1,5 +1,8 @@
 <template>
-  <div class="indice-de-contenido" v-if="elementos.length !=0">
+  <div
+    class="indice-de-contenido"
+    v-if="elementos.length != 0"
+  >
     <p class="titulo">{{ titulo_indice }}</p>
     <nav>
       <a
@@ -7,7 +10,7 @@
         :href="elemento.ref"
         :key="indice"
         class="seccion"
-        :class="{ activo: (seccion_visible == elemento.ref) }"
+        :class="{ activo: seccion_visible == elemento.ref }"
       >
         {{ elemento.nombre }}
       </a>
@@ -17,11 +20,11 @@
 
 <script>
 export default {
-  name: "IndiceDeContenido",
+  name: 'IndiceDeContenido',
   props: {
     titulo_indice: {
       type: String,
-      default: () => "Contenidos",
+      default: () => 'Contenidos',
     },
     elementos: {
       type: [],
@@ -30,39 +33,33 @@ export default {
   },
   data() {
     return {
-      seccion_visible: "",
-    };
+      seccion_visible: '',
+    }
   },
   mounted() {
-    if(this.elementos.length >0){
-      this.seccion_visible = this.elementos[0].ref;
+    if (this.elementos.length > 0) {
+      this.seccion_visible = this.elementos[0].ref
     }
-		
-		window.addEventListener("scroll",this.cambioPosicion)
-		
-	},
+
+    window.addEventListener('scroll', this.cambioPosicion)
+  },
   methods: {
     cambioPosicion() {
-			this.elementos.forEach(d => {
-				d.seccion = document.querySelector(d.ref);
-				d.y_min = d.seccion.offsetTop;
-				d.y_max = d.seccion.offsetTop + d.seccion.offsetHeight;
-			});
-			let posicion_scroll_y = window.pageYOffset + 100;
+      this.elementos.forEach(d => {
+        d.seccion = document.querySelector(d.ref)
+        d.y_min = d.seccion.offsetTop
+        d.y_max = d.seccion.offsetTop + d.seccion.offsetHeight
+      })
+      let posicion_scroll_y = window.pageYOffset + 100
 
-			this.elementos.map((d) =>{
-				if(d.y_min <= posicion_scroll_y && posicion_scroll_y < d.y_max ){
-					this.seccion_visible = d.ref
-				}
-			})
-
-			
-			
-
-
-		},
+      this.elementos.map(d => {
+        if (d.y_min <= posicion_scroll_y && posicion_scroll_y < d.y_max) {
+          this.seccion_visible = d.ref
+        }
+      })
+    },
   },
-};
+}
 </script>
 
 <style lang="scss">
@@ -78,11 +75,11 @@ export default {
     border-left: solid 2px #a9a8a9;
     border-radius: 0;
     background: transparent;
-		color: var(--tipografia-color-3, #333);
-		&.activo{
-			color: var(--menu-lateral-accion, #00f);
-			border-left: solid 4px var(--menu-lateral-accion, #00f);
-		}
+    color: var(--tipografia-color-3, #333);
+    &.activo {
+      color: var(--menu-lateral-accion, #00f);
+      border-left: solid 4px var(--menu-lateral-accion, #00f);
+    }
     @media (hover: hover) {
       &:hover {
         color: var(--menu-lateral-accion, #00f);

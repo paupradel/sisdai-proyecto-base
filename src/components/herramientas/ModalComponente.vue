@@ -1,20 +1,30 @@
 <template>
   <transition name="fade">
-    <div class="modal" :class="overflowYX" v-if="esta_abierto">
-      <div class="modal-fondo-trasero" @click="cerrarModal()"/>
-      <div class="modal-contenedor" :class="tamanio">
+    <div
+      class="modal"
+      :class="overflowYX"
+      v-if="esta_abierto"
+    >
+      <div
+        class="modal-fondo-trasero"
+        @click="cerrarModal()"
+      />
+      <div
+        class="modal-contenedor"
+        :class="tamanio"
+      >
         <div class="modal-encabezado">
-          <slot name="encabezado"/>
+          <slot name="encabezado" />
           <button
             class="btn-icono icono-cerrar modal-cerrar"
-          @click="cerrarModal()">
-          </button>
+            @click="cerrarModal()"
+          ></button>
         </div>
         <div class="modal-cuerpo">
-          <slot name="cuerpo"/>
+          <slot name="cuerpo" />
         </div>
         <div class="modal-pie">
-          <slot name="pie"/>
+          <slot name="pie" />
         </div>
       </div>
     </div>
@@ -27,44 +37,44 @@ export default {
   data() {
     return {
       esta_abierto: false,
-    };
+    }
   },
   props: {
     tamanio: {
       type: String,
       default: 'chico',
-    }
+    },
   },
   beforeMount() {
-    window.addEventListener('keyup', this.onEscapeKeyUp);
+    window.addEventListener('keyup', this.onEscapeKeyUp)
   },
   beforeDestroy() {
-    window.removeEventListener('keyup', this.onEscapeKeyUp);
+    window.removeEventListener('keyup', this.onEscapeKeyUp)
   },
   methods: {
     cerrarModal() {
-      this.esta_abierto = false;
-      document.querySelector('body').classList.remove('overflow-hidden');
+      this.esta_abierto = false
+      document.querySelector('body').classList.remove('overflow-hidden')
     },
     abrirModal() {
-      this.esta_abierto = true;
-      document.querySelector('body').classList.add('overflow-hidden');
+      this.esta_abierto = true
+      document.querySelector('body').classList.add('overflow-hidden')
     },
     onEscapeKeyUp(event) {
       if (event.which === 27) {
-        this.cerrarModal();
+        this.cerrarModal()
       }
     },
   },
   computed: {
     overflowYX() {
-      if(this.tamanio === 'pantalla-completa') {
-        return 'overflow-x-y';
+      if (this.tamanio === 'pantalla-completa') {
+        return 'overflow-x-y'
       }
-      return '';
+      return ''
     },
   },
-};
+}
 </script>
 
 <style lang="scss" scoped>
@@ -138,12 +148,12 @@ export default {
     box-shadow: none;
     border: none;
     padding: 8px;
-    color:#000;
+    color: #000;
     font-weight: 700;
     margin-left: auto;
     font-size: 16px;
     &:hover {
-      color:#000
+      color: #000;
     }
   }
   &-encabezado {
@@ -152,7 +162,6 @@ export default {
     justify-content: space-between;
   }
   &-cuerpo {
-    
   }
   &-pie {
     display: flex;

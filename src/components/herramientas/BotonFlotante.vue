@@ -1,17 +1,35 @@
 <template>
-  <div :class="{'a11y-simplificada-ocultar': tieneVistaSimplificada}">
-    <div class="boton-flotante" :class="{'abierto': abiertoBotonFlotante}">
-      <button class="toggle-flotante" 
-        :class="{'abierto': !abiertoBotonFlotante}" 
-        @click="abiertoBotonFlotante = !abiertoBotonFlotante">
-        <span v-if="abiertoBotonFlotante" class="icono-restar icono-3"></span>
-        <span v-else class="icono-documento icono-3"></span>
+  <div :class="{ 'a11y-simplificada-ocultar': tieneVistaSimplificada }">
+    <div
+      class="boton-flotante"
+      :class="{ abierto: abiertoBotonFlotante }"
+    >
+      <button
+        class="toggle-flotante"
+        :class="{ abierto: !abiertoBotonFlotante }"
+        @click="abiertoBotonFlotante = !abiertoBotonFlotante"
+      >
+        <span
+          v-if="abiertoBotonFlotante"
+          class="icono-restar icono-3"
+        ></span>
+        <span
+          v-else
+          class="icono-documento icono-3"
+        ></span>
       </button>
-      <a v-if="abiertoBotonFlotante"
-        :href="enlace" target="_blank" rel="noopener"
+      <a
+        v-if="abiertoBotonFlotante"
+        :href="enlace"
+        target="_blank"
+        rel="noopener"
         class="btn-flotante"
-        :class="{'abierto': abiertoBotonFlotante}">
-        <span class="btn-icon" aria-hidden="true">
+        :class="{ abierto: abiertoBotonFlotante }"
+      >
+        <span
+          class="btn-icon"
+          aria-hidden="true"
+        >
           <span class="icono-documento icono-3 icon"></span>
         </span>
         {{ texto }} <span class="a11y-solo-lectura"> (Link externo).</span>
@@ -26,27 +44,27 @@ export default {
   props: {
     texto: {
       type: String,
-      default: 'Descarga'
+      default: 'Descarga',
     },
     enlace: {
       type: String,
-      default: 'ejem'
+      default: 'ejem',
     },
     ancho_btn: {
       type: String,
-      default: '160px'
+      default: '160px',
     },
   },
   data() {
     return {
       abiertoBotonFlotante: true,
-    };
+    }
   },
   computed: {
     tieneVistaSimplificada() {
-      return this.$store.getters.tieneVistaSimplificada;
+      return this.$store.getters.tieneVistaSimplificada
     },
-  }
+  },
 }
 </script>
 
@@ -56,7 +74,7 @@ export default {
 }
 @keyframes iconBtn {
   0% {
-    opacity: .25;
+    opacity: 0.25;
     top: 2px;
   }
   50% {
@@ -64,7 +82,7 @@ export default {
     top: -2px;
   }
   100% {
-    opacity: .25;
+    opacity: 0.25;
     top: 2px;
   }
 }
@@ -81,7 +99,7 @@ export default {
   z-index: 3;
   overflow: hidden;
   box-shadow: 4px 4px 8px 2px var(--sombra);
-  transition: all .4s ease-in-out;
+  transition: all 0.4s ease-in-out;
   &.abierto {
     width: v-bind(ancho_btn);
   }
@@ -93,7 +111,7 @@ export default {
     border: none;
     margin: 0;
     padding: 16px 5px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &.abierto {
       background-color: #fff;
       &:hover {
@@ -126,7 +144,7 @@ export default {
     padding-bottom: 0px;
     padding-left: 8px;
     padding-right: 16px;
-    transition: all .3s ease-in-out;
+    transition: all 0.3s ease-in-out;
     &.abierto {
       &:hover {
         background-color: #000;

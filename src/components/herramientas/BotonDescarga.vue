@@ -1,7 +1,8 @@
 <template>
   <div id="btn_descarga">
-    <a class="boton-descarga"
-      :class="{'text-none-decoration': !tieneVistaSimplificada}"
+    <a
+      class="boton-descarga"
+      :class="{ 'text-none-decoration': !tieneVistaSimplificada }"
       :href="url_descarga"
       :download="`${url_descarga}.zip`"
     >
@@ -12,7 +13,7 @@
       </div>
     </a>
   </div>
-</template> 
+</template>
 
 <script>
 export default {
@@ -20,20 +21,21 @@ export default {
   props: {
     url_descarga: {
       type: String,
-      default: '#'
+      default: '#',
     },
     titulo: {
       type: String,
-      default: 'Archivo de descarga'
+      default: 'Archivo de descarga',
     },
     descripcion: {
       type: String,
-      default: 'Tenetur molestias iusto ducimus cumque eligendi quod, porro quos iste facere ut, eum veritatis debitis voluptate nemo sunt obcaecati.'
-    }
+      default:
+        'Tenetur molestias iusto ducimus cumque eligendi quod, porro quos iste facere ut, eum veritatis debitis voluptate nemo sunt obcaecati.',
+    },
   },
   computed: {
     tieneVistaSimplificada() {
-      return this.$store.getters.tieneVistaSimplificada;
+      return this.$store.getters.tieneVistaSimplificada
     },
   },
 }

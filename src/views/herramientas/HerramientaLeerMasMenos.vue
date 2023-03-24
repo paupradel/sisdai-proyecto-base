@@ -3,18 +3,22 @@
     <p class="titulo-pagina">LeerMasMenos</p>
     <p>
       El componente
-      <code class="language-html" v-text="`<LeerMasMenos />`"></code> más
-      visualiza una mínima parte del contenido y ofrece la posibilidad de
+      <code
+        class="language-html"
+        v-text="`<LeerMasMenos />`"
+      ></code>
+      más visualiza una mínima parte del contenido y ofrece la posibilidad de
       desplegarse si la persona usuaria así lo decide.
     </p>
     <p>
-      Una de las ventajas de este botón es la oportunidad de ahorrar espacio
-      en el diseño de la interfaz, así como apoyar la jerarquía de los
-      contenidos.
+      Una de las ventajas de este botón es la oportunidad de ahorrar espacio en
+      el diseño de la interfaz, así como apoyar la jerarquía de los contenidos.
     </p>
     <vue-code-highlight language="html">
-      <pre class="language-html"
-      v-text="`<template>
+      <pre
+        class="language-html"
+        v-text="
+          `<template>
 <div>
 <LeerMasMenos>
   <template v-slot&quot;texto-corto>
@@ -29,31 +33,39 @@
   </template>
 </LeerMasMenos>
 </div>
-</template>`"></pre>
+</template>`
+        "
+      ></pre>
     </vue-code-highlight>
 
     <p class="titulo-seccion">Parámetros</p>
     <p>
-      La siguiente es una lista de propiedades que admite el componente y
-      que se tienen que especificar al importar el mismo.
+      La siguiente es una lista de propiedades que admite el componente y que se
+      tienen que especificar al importar el mismo.
     </p>
     <div class="titulo-subseccion">Opcionales</div>
     <p>
-      Estos parámetros cuentan con un valor default al importar el
-      componente, por lo tanto la persona usuaria tendrá más libertad de
-      customizar el componente al modificarlos.
+      Estos parámetros cuentan con un valor default al importar el componente,
+      por lo tanto la persona usuaria tendrá más libertad de customizar el
+      componente al modificarlos.
     </p>
     <ul>
-      <li><code class="language-html">alto_max</code><i>(String) </i>Alto del slot de texto-largo cuando está abierto. Por defecto usa 370px.</li>
+      <li>
+        <code class="language-html">alto_max</code><i>(String) </i>Alto del slot
+        de texto-largo cuando está abierto. Por defecto usa 370px.
+      </li>
     </ul>
 
     <p class="titulo-seccion">Ejemplos de uso</p>
     <p>
-      Cuando se requiere mostrar un texto de introducción pero es muy
-      extenso, el componente
-      <code class="language-html" v-text="`<LeerMasMenos />`"></code>
-      construirá un contenedor del ancho total con un botón para Leer Más o
-      Leer Menos texto
+      Cuando se requiere mostrar un texto de introducción pero es muy extenso,
+      el componente
+      <code
+        class="language-html"
+        v-text="`<LeerMasMenos />`"
+      ></code>
+      construirá un contenedor del ancho total con un botón para Leer Más o Leer
+      Menos texto
     </p>
     <p>
       Utiliza el botón de Leer más si en el diseño se cumplen estas dos
@@ -62,35 +74,43 @@
     <ol>
       <li>El texto es largo, es decir, cuenta con más de 100 palabras.</li>
       <li>
-        El texto es meramente informativo o circunstancial y no es
-        indispensable para que la persona usuaria interactúe con el sitio.
+        El texto es meramente informativo o circunstancial y no es indispensable
+        para que la persona usuaria interactúe con el sitio.
       </li>
     </ol>
     <br />
     <hr />
 
-    <LeerMasMenos
-      alto_max="370px">
+    <LeerMasMenos alto_max="370px">
       <template v-slot:texto-corto>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, iusto quia eligendi 
-          soluta quos eaque aliquam officia quo neque unde reiciendis assumenda maiores magnam 
-          quidem ex dignissimos laborum quibusdam sapiente.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, iusto
+          quia eligendi soluta quos eaque aliquam officia quo neque unde
+          reiciendis assumenda maiores magnam quidem ex dignissimos laborum
+          quibusdam sapiente.
         </p>
       </template>
       <template v-slot:texto-largo>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, eligendi? 
-          Dolores, nobis! Odit atque veniam cumque porro tempore odio, fuga pariatur nulla 
-          natus veritatis <small>sint temporibus error</small> <strong>ducimus ut explicabo?</strong>
-          <span :class="{'a11y-simplificada-ocultar': tieneVistaSimplificada}"> 🤓</span>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus,
+          eligendi? Dolores, nobis! Odit atque veniam cumque porro tempore odio,
+          fuga pariatur nulla natus veritatis
+          <small>sint temporibus error</small>
+          <strong>ducimus ut explicabo?</strong>
+          <span
+            :class="{ 'a11y-simplificada-ocultar': tieneVistaSimplificada }"
+          >
+            🤓</span
+          >
         </p>
       </template>
     </LeerMasMenos>
 
     <vue-code-highlight language="html">
-      <pre class="language-html"
-      v-text="`<template>
+      <pre
+        class="language-html"
+        v-text="
+          `<template>
 <div>
 <LeerMasMenos
       alto_max=&quot;370px&quot;>
@@ -111,7 +131,9 @@
   </template>
 </LeerMasMenos>
 </div>
-</template>`"></pre>
+</template>`
+        "
+      ></pre>
     </vue-code-highlight>
 
     <div v-highlight>
@@ -152,7 +174,7 @@ export default {
       }
     }
 }
-&lt;/script></code></pre>        
+&lt;/script></code></pre>
     </div>
 
     <div v-highlight>
@@ -178,10 +200,10 @@ export default {
 </template>
 
 <script>
-import LeerMasMenos from '@/components/herramientas/LeerMasMenos.vue';
+import LeerMasMenos from '@/components/herramientas/LeerMasMenos.vue'
 
-import { component as VueCodeHighlight } from 'vue-code-highlight';
-import "vue-code-highlight/themes/prism-tomorrow.css";
+import { component as VueCodeHighlight } from 'vue-code-highlight'
+import 'vue-code-highlight/themes/prism-tomorrow.css'
 
 export default {
   components: {
@@ -190,12 +212,12 @@ export default {
   },
   computed: {
     tieneVistaSimplificada() {
-      return this.$store.getters.tieneVistaSimplificada;
+      return this.$store.getters.tieneVistaSimplificada
     },
   },
   data() {
     return {}
-  }
+  },
 }
 </script>
 

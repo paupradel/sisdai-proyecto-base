@@ -3,13 +3,18 @@
     <div class="texto-corto">
       <slot name="texto-corto" />
     </div>
-    <div class="texto-largo" :style="styleObject">
+    <div
+      class="texto-largo"
+      :style="styleObject"
+    >
       <slot name="texto-largo" />
     </div>
-    <button class="boton-primario boton-chico btn-leer-mas-menos"
+    <button
+      class="boton-primario boton-chico btn-leer-mas-menos"
       v-if="!tieneVistaSimplificada"
-      @click="alternarMaxHeight">
-      {{ abierto ? "Leer menos": "Leer más" }}
+      @click="alternarMaxHeight"
+    >
+      {{ abierto ? 'Leer menos' : 'Leer más' }}
     </button>
   </div>
 </template>
@@ -20,36 +25,37 @@ export default {
   props: {
     alto_max: {
       type: String,
-      default: '370px'
-    }
+      default: '370px',
+    },
   },
-  data() { 
+  data() {
     return {
       abierto: false,
-      max_height: '0px'
+      max_height: '0px',
     }
   },
   computed: {
     tieneVistaSimplificada() {
-      return this.$store.getters.tieneVistaSimplificada;
+      return this.$store.getters.tieneVistaSimplificada
     },
     computedMaxHeight() {
-      return this.max_height;
+      return this.max_height
     },
     styleObject() {
-      if(this.tieneVistaSimplificada) {
-        return {'max-height': this.alto_max}
+      if (this.tieneVistaSimplificada) {
+        return { 'max-height': this.alto_max }
       }
-      return {'max-height': this.computedMaxHeight};
-    }
+      return { 'max-height': this.computedMaxHeight }
+    },
   },
   methods: {
     alternarMaxHeight() {
       this.abierto === false
-        ? this.max_height = this.alto_max : this.max_height = '0px';
-      this.abierto = !this.abierto;
-    }
-  }
+        ? (this.max_height = this.alto_max)
+        : (this.max_height = '0px')
+      this.abierto = !this.abierto
+    },
+  },
 }
 </script>
 
@@ -63,7 +69,7 @@ export default {
   .texto-largo {
     max-height: 0;
     overflow: hidden;
-    transition: all .33s ease-in-out;
+    transition: all 0.33s ease-in-out;
   }
   .btn-leer-mas-menos {
     margin-top: 16px;

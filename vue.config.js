@@ -1,13 +1,13 @@
-const { defineConfig } = require('@vue/cli-service');
-const CopyPlugin = require("copy-webpack-plugin");
+const { defineConfig } = require('@vue/cli-service')
+const CopyPlugin = require('copy-webpack-plugin')
 
-const webpack = require('webpack');
-const fs = require('fs');
+const webpack = require('webpack')
+const fs = require('fs')
 
-const packageJson = fs.readFileSync('./package.json');
-const version = JSON.parse(packageJson).version || 0;
+const packageJson = fs.readFileSync('./package.json')
+const version = JSON.parse(packageJson).version || 0
 
-const now = new Date();
+const now = new Date()
 
 module.exports = defineConfig({
   productionSourceMap: true,
@@ -25,14 +25,14 @@ module.exports = defineConfig({
     plugins: [
       new webpack.DefinePlugin({
         'process.env.PACKAGE_VERSION': `"${version}"`,
-        'process.env.DATE_DEPLOY': `"${now.toLocaleString('es-MX', { timeZone: 'America/Mexico_City' })}"`,
-        'process.env.ENV_DEPLOY': `"${process.env.NODE_ENV}"`
+        'process.env.DATE_DEPLOY': `"${now.toLocaleString('es-MX', {
+          timeZone: 'America/Mexico_City',
+        })}"`,
+        'process.env.ENV_DEPLOY': `"${process.env.NODE_ENV}"`,
       }),
       new CopyPlugin({
-        patterns: [
-          { from: "src/assets/data/", to: "data/" }
-        ]
-      })
-    ]
+        patterns: [{ from: 'src/assets/data/', to: 'data/' }],
+      }),
+    ],
   },
 })

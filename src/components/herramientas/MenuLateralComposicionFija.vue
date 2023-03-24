@@ -11,14 +11,12 @@
 </template>
 
 <script>
-
 export default {
   name: 'MenuLateralComposicionFija',
 }
 </script>
 
 <style lang="scss">
-
 .menu-fondo {
   background: transparent;
   @include mediaquery('esc') {

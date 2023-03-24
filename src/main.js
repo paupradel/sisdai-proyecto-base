@@ -10,12 +10,12 @@ Vue.config.productionTip = false
 new Vue({
   router,
   store,
-  render: h => h(App)
+  render: h => h(App),
 }).$mount('#app')
 
 Vue.use(VueCodeHighlight) //registers the v-highlight directive
 
-if (process.env.VUE_APP_MATOMO_SITEID != 0) {
+if (process.env.VUE_APP_MATOMO_SITEID !== 0) {
   Vue.use(VueMatomo, {
     host: 'https://retru.conacyt.mx/',
     siteId: process.env.VUE_APP_MATOMO_SITEID,
@@ -25,5 +25,5 @@ if (process.env.VUE_APP_MATOMO_SITEID != 0) {
     requireConsent: false,
     trackInitialView: true,
     debug: true,
-  });
+  })
 }

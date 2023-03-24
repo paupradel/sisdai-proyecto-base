@@ -1,12 +1,15 @@
 <template>
-  <div id="info_despliegue" v-if="entornoProyecto !== 'production'">
+  <div
+    id="info_despliegue"
+    v-if="entornoProyecto !== 'production'"
+  >
     <dl class="info-entorno">
       <dt>V</dt>
-      <dd>{{versionProyecto}}</dd>
-      <dt>Ambiente: </dt>
-      <dd>{{entornoProyecto}}</dd>
-      <dt>Actualización: </dt>
-      <dd>{{actualizacionProyecto}}</dd>
+      <dd>{{ versionProyecto }}</dd>
+      <dt>Ambiente:</dt>
+      <dd>{{ entornoProyecto }}</dd>
+      <dt>Actualización:</dt>
+      <dd>{{ actualizacionProyecto }}</dd>
     </dl>
   </div>
 </template>
@@ -16,15 +19,15 @@ export default {
   name: 'InfoDespliegue',
   computed: {
     versionProyecto() {
-      return this.$store.getters.versionProyecto;
+      return this.$store.getters.versionProyecto
     },
     actualizacionProyecto() {
-      return this.$store.getters.actualizacionProyecto;
+      return this.$store.getters.actualizacionProyecto
     },
     entornoProyecto() {
-      return this.$store.getters.entornoProyecto;
+      return this.$store.getters.entornoProyecto
     },
-  }
+  },
 }
 </script>
 
@@ -35,10 +38,11 @@ export default {
   right: 0;
   bottom: 0;
   z-index: 9999;
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   user-select: none;
-  dt, dd {
+  dt,
+  dd {
     color: #fff;
     font-size: 10px;
     line-height: 12px;

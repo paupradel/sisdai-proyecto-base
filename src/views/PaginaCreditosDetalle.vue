@@ -1,38 +1,42 @@
 <template>
-
   <div class="contenedor ancho-lectura m-y-10">
     <div class="tmp-credito-detalle">
       <div class="img">
-        <img :src="persona.foto" :alt="persona.nombre" />
+        <img
+          :src="persona.foto"
+          :alt="persona.nombre"
+        />
       </div>
       <div class="text">
-        <p class="nombre">{{persona.nombre}}</p>
-        <p class="cargo">{{persona.cargo}}</p>
-        <p class="institucion">{{persona.institucion}}</p>
+        <p class="nombre">{{ persona.nombre }}</p>
+        <p class="cargo">{{ persona.cargo }}</p>
+        <p class="institucion">{{ persona.institucion }}</p>
       </div>
     </div>
-    <hr/>
-    <p v-for="(parrafo, index) in persona.semblanza" :key="`parrafo-${index}`">
-      {{parrafo}}
+    <hr />
+    <p
+      v-for="(parrafo, index) in persona.semblanza"
+      :key="`parrafo-${index}`"
+    >
+      {{ parrafo }}
     </p>
     <router-link to="/creditos">Regresar</router-link>
   </div>
-
 </template>
 
 <script>
-import personas from '@/assets/data/creditos-personas-ejemplo.json';
+import personas from '@/assets/data/creditos-personas-ejemplo.json'
 
 export default {
-  name: "PaginaCreditosDetalle",
-  data(){
+  name: 'PaginaCreditosDetalle',
+  data() {
     return {
       persona: {},
     }
   },
   mounted() {
-    this.persona = personas.filter(d => d.id == this.$route.params.id)[0];
-  }
+    this.persona = personas.filter(d => d.id === this.$route.params.id)[0]
+  },
 }
 </script>
 

@@ -3,20 +3,23 @@
     <p class="titulo-pagina">BotonDescarga</p>
     <p>
       El componente
-      <code class="language-html" v-text="`<BotonDescarga />`"></code> más
-      permite descargar archivos ya sea individuales o comprimidos.
-      Se recomienda utilizar una ruta cdn en donde contega almacenado
-      el documento evitando cargarlo al proyecto y mejorando la eficiencia del sitio.
+      <code
+        class="language-html"
+        v-text="`<BotonDescarga />`"
+      ></code>
+      más permite descargar archivos ya sea individuales o comprimidos. Se
+      recomienda utilizar una ruta cdn en donde contega almacenado el documento
+      evitando cargarlo al proyecto y mejorando la eficiencia del sitio.
     </p>
     <BotonDescarga
       descripcion="Tenetur molestias iusto ducimus cumque eligendi quod, porro quos iste facere ut, eum veritatis debitis voluptate nemo sunt obcaecati."
       :url_descarga="`${cdnPrueba}.zip`"
-    /> 
+    />
   </div>
 </template>
 
 <script>
-import BotonDescarga from '@/components/herramientas/BotonDescarga.vue';
+import BotonDescarga from '@/components/herramientas/BotonDescarga.vue'
 
 // import { component as VueCodeHighlight } from 'vue-code-highlight';
 // import "vue-code-highlight/themes/prism-tomorrow.css";
@@ -28,14 +31,14 @@ export default {
   },
   computed: {
     tieneVistaSimplificada() {
-      return this.$store.getters.tieneVistaSimplificada;
+      return this.$store.getters.tieneVistaSimplificada
     },
   },
   data() {
     return {
-      cdnPrueba: '/archivo'
+      cdnPrueba: '/archivo',
     }
-  }
+  },
 }
 </script>
 
