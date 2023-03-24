@@ -65,53 +65,10 @@ const navegacion = {
     },
   },
 }
-const accesibilidad = {
-  namespaced: false,
-  state: {
-    menu_accesibilidad_abierto: false,
-    tipografia_atkinson: false,
-    vista_simplificada: false,
-    enlaces_subrayados: false,
-  },
-  getters: {
-    esteMenuAccesibilidadAbierto(state) {
-      return state.menu_accesibilidad_abierto
-    },
-    tieneTipografiaAtkinson(state) {
-      return state.tipografia_atkinson
-    },
-    tieneVistaSimplificada(state) {
-      return state.vista_simplificada
-    },
-    tieneEnlacesSubrayados(state) {
-      return state.enlaces_subrayados
-    },
-  },
-  mutations: {
-    alternarMenuAccesibilidad(state) {
-      state.menu_accesibilidad_abierto = !state.menu_accesibilidad_abierto
-    },
-    alternarTipografiaAtkinson(state) {
-      state.tipografia_atkinson = !state.tipografia_atkinson
-    },
-    alternarVistaSimplificada(state) {
-      state.vista_simplificada = !state.vista_simplificada
-    },
-    alternarEnlacesSubrayados(state) {
-      state.enlaces_subrayados = !state.enlaces_subrayados
-    },
-    limpiarClasesAccesibles(state) {
-      state.tipografia_atkinson = false
-      state.vista_simplificada = false
-      state.enlaces_subrayados = false
-    },
-  },
-}
 
 export default new Vuex.Store({
   modules: {
     navegacion,
-    accesibilidad,
     sisdaiAccesibilidad,
   },
 })
