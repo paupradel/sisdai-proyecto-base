@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import sisdaiAccesibilidad from 'sisdai-componentes/src/stores/accesibilidad'
 
 Vue.use(Vuex)
 
@@ -111,5 +112,6 @@ export default new Vuex.Store({
   modules: {
     navegacion,
     accesibilidad,
+    sisdaiAccesibilidad,
   },
 })
