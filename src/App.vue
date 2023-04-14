@@ -1,14 +1,10 @@
 <script setup>
-import NavegacionGobMx from '@/components/navegacion/NavegacionGobMx.vue'
-import NavegacionPrincipal from '@/components/navegacion/NavegacionPrincipal.vue'
-import PiePaginaGobMx from './components/piepagina/PiePaginaGobMx.vue'
-import PiePaginaConacyt from './components/piepagina/PiePaginaConacyt.vue'
 import BotonFlotante from './components/herramientas/BotonFlotante.vue'
 import InfoDespliegue from '@/components/herramientas/InfoDespliegue.vue'
 import { computed } from 'vue'
 import store from '@/store/index.js'
 
-import MenuAccesibilidad from 'sisdai-componentes/src/components/menu-accesibilidad/MenuAccesibilidad.vue'
+import NavegacionPrincipalBase from './components/navegacion/NavegacionPrincipalBase.vue'
 
 const a11yClass = computed(() => ({
   'a11y-tipografia': store.state.sisdaiAccesibilidad.tipografia_accesible,
@@ -31,7 +27,7 @@ function limpiarClasesAccesibles() {
     :class="a11yClass"
   >
     <NavegacionGobMx />
-    <NavegacionPrincipal />
+    <NavegacionPrincipalBase />
     <MenuAccesibilidad
       @alSeleccionarOpcion="mutarAccesibilidad"
       @restablecer="limpiarClasesAccesibles"
