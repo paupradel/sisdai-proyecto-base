@@ -3,12 +3,12 @@ import NavegacionGobMx from '@/components/navegacion/NavegacionGobMx.vue'
 import NavegacionPrincipal from '@/components/navegacion/NavegacionPrincipal.vue'
 import PiePaginaGobMx from './components/piepagina/PiePaginaGobMx.vue'
 import PiePaginaConacyt from './components/piepagina/PiePaginaConacyt.vue'
-import BotonFlotante from './components/herramientas/BotonFlotante.vue'
 import InfoDespliegue from '@/components/herramientas/InfoDespliegue.vue'
 import { computed } from 'vue'
 import store from '@/store/index.js'
 
-import MenuAccesibilidad from 'sisdai-componentes/src/components/menu-accesibilidad/MenuAccesibilidad.vue'
+import SisdaiMenuAccesibilidad from 'sisdai-componentes/src/componentes/menu-accesibilidad/MenuAccesibilidad'
+import SisdaiBotonFlotante from 'sisdai-componentes/src/componentes/boton-flotante/SisdaiBotonFlotante'
 
 const a11yClass = computed(() => ({
   'a11y-tipografia': store.state.sisdaiAccesibilidad.tipografia_accesible,
@@ -32,14 +32,18 @@ function limpiarClasesAccesibles() {
   >
     <NavegacionGobMx />
     <NavegacionPrincipal />
-    <MenuAccesibilidad
+    <SisdaiMenuAccesibilidad
       @alSeleccionarOpcion="mutarAccesibilidad"
       @restablecer="limpiarClasesAccesibles"
     />
     <router-view />
-    <BotonFlotante
-      texto="Descarga"
-      enlace="#"
+    <SisdaiBotonFlotante
+      :enlaces="[
+        {
+          clasesCss: 'icono-resaltado',
+          icono: 'icono-documento icono-3',
+        },
+      ]"
     />
     <InfoDespliegue />
     <PiePaginaConacyt />
