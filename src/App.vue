@@ -7,7 +7,7 @@ import InfoDespliegue from '@/components/herramientas/InfoDespliegue.vue'
 import { computed } from 'vue'
 import store from '@/store/index.js'
 
-import SisdaiMenuAccesibilidad from 'sisdai-componentes/src/componentes/menu-accesibilidad/MenuAccesibilidad'
+import SisdaiMenuAccesibilidad from 'sisdai-componentes/src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad'
 import SisdaiBotonFlotante from 'sisdai-componentes/src/componentes/boton-flotante/SisdaiBotonFlotante'
 
 const a11yClass = computed(() => ({
