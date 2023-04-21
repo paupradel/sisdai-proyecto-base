@@ -1,5 +1,5 @@
 <template>
-  <NavegacionPrincipal>
+  <SisdaiNavegacionPrincipal>
     <ul class="nav-menu">
       <li>
         <router-link
@@ -59,5 +59,5 @@
         >
       </li>
     </ul>
-  </NavegacionPrincipal>
+  </SisdaiNavegacionPrincipal>
 </template>
