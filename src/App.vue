@@ -4,6 +4,8 @@ import { computed } from 'vue'
 import store from '@/store/index.js'
 
 import NavegacionPrincipalBase from './components/navegacion/NavegacionPrincipalBase.vue'
+import SisdaiMenuAccesibilidad from 'sisdai-componentes/src/componentes/menu-accesibilidad/SisdaiMenuAccesibilidad'
+import SisdaiBotonFlotante from 'sisdai-componentes/src/componentes/boton-flotante/SisdaiBotonFlotante'
 
 const a11yClass = computed(() => ({
   'a11y-tipografia': store.state.sisdaiAccesibilidad.tipografia_accesible,
