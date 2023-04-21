@@ -1,5 +1,4 @@
 <script setup>
-import BotonFlotante from './components/herramientas/BotonFlotante.vue'
 import InfoDespliegue from '@/components/herramientas/InfoDespliegue.vue'
 import { computed } from 'vue'
 import store from '@/store/index.js'
@@ -26,16 +25,19 @@ function limpiarClasesAccesibles() {
     id="app"
     :class="a11yClass"
   >
-    <NavegacionGobMx />
     <NavegacionPrincipalBase />
-    <MenuAccesibilidad
+    <SisdaiMenuAccesibilidad
       @alSeleccionarOpcion="mutarAccesibilidad"
       @restablecer="limpiarClasesAccesibles"
     />
     <router-view />
-    <BotonFlotante
-      texto="Descarga"
-      enlace="#"
+    <SisdaiBotonFlotante
+      :enlaces="[
+        {
+          clasesCss: 'icono-resaltado',
+          icono: 'icono-documento icono-3',
+        },
+      ]"
     />
     <InfoDespliegue />
     <PiePaginaConacyt />
