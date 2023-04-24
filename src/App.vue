@@ -1,5 +1,5 @@
 <script setup>
-import InfoDespliegue from '@/components/herramientas/InfoDespliegue.vue'
+//import InfoDespliegue from '@/components/herramientas/InfoDespliegue.vue'
 import { computed } from 'vue'
 import store from '@/store/index.js'
 
@@ -40,7 +40,11 @@ function limpiarClasesAccesibles() {
         },
       ]"
     />
-    <InfoDespliegue />
+    <SisdaiInfoDeDespliegue
+      :versionProyecto="$store.getters.versionProyecto"
+      :entornoProyecto="$store.getters.entornoProyecto"
+      :actualizacionProyecto="$store.getters.actualizacionProyecto"
+    />
     <SisdaiPiePaginaConacyt />
     <SisdaiPiePaginaGobMx />
   </div>
