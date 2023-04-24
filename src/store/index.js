@@ -12,10 +12,6 @@ const navegacion = {
     navegacion_submenu_abierto: false,
 
     cdn_archivos_dominio: process.env.VUE_APP_CDN_ARCHIVOS,
-
-    version_proyecto: process.env.PACKAGE_VERSION,
-    actualizacion_proyecto: process.env.DATE_DEPLOY,
-    entorno_proyecto: process.env.ENV_DEPLOY,
   },
   getters: {
     estaNavegacionGobiernoAbierta(state) {
@@ -32,16 +28,6 @@ const navegacion = {
       // Aquí puedes completar la ruta para el cdn. El dominio ddepende del ambiente,
       // pero la ruta a los archivos deberá coincidir en ambos dominios
       return `${state.cdn_archivos_dominio}/`
-    },
-
-    versionProyecto(state) {
-      return state.version_proyecto
-    },
-    actualizacionProyecto(state) {
-      return state.actualizacion_proyecto
-    },
-    entornoProyecto(state) {
-      return state.entorno_proyecto
     },
   },
   mutations: {
