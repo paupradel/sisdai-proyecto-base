@@ -1,5 +1,4 @@
 <script setup>
-//import InfoDespliegue from '@/components/herramientas/InfoDespliegue.vue'
 import { computed } from 'vue'
 import store from '@/store/index.js'
 
@@ -17,6 +16,12 @@ function mutarAccesibilidad({ accion }) {
 
 function limpiarClasesAccesibles() {
   store.commit('sisdaiAccesibilidad/limpiarClasesAccesibles')
+}
+
+const infoDespliegue = {
+  version_proyecto: process.env.PACKAGE_VERSION,
+  actualizacion_proyecto: process.env.DATE_DEPLOY,
+  entorno_proyecto: process.env.ENV_DEPLOY,
 }
 </script>
 
@@ -41,9 +46,9 @@ function limpiarClasesAccesibles() {
       ]"
     />
     <SisdaiInfoDeDespliegue
-      :versionProyecto="$store.getters.versionProyecto"
-      :entornoProyecto="$store.getters.entornoProyecto"
-      :actualizacionProyecto="$store.getters.actualizacionProyecto"
+      :versionProyecto="infoDespliegue.version_proyecto"
+      :entornoProyecto="infoDespliegue.entorno_proyecto"
+      :actualizacionProyecto="infoDespliegue.actualizacion_proyecto"
     />
     <SisdaiPiePaginaConacyt />
     <SisdaiPiePaginaGobMx />
