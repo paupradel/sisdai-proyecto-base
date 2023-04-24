@@ -1,5 +1,7 @@
 <template>
-  <SisdaiNavegacionPrincipal>
+  <SisdaiNavegacionPrincipal
+    :nav-informacion="`Sección: <b>${$route.name}</b>`"
+  >
     <ul class="nav-menu">
       <li>
         <router-link
