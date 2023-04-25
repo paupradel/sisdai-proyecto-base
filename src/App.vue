@@ -1,22 +1,7 @@
 <script setup>
-import { computed } from 'vue'
 import store from '@/store/index.js'
 
 import NavegacionPrincipalBase from './components/navegacion/NavegacionPrincipalBase.vue'
-
-const a11yClass = computed(() => ({
-  'a11y-tipografia': store.state.sisdaiAccesibilidad.tipografia_accesible,
-  'a11y-simplificada': store.state.sisdaiAccesibilidad.vista_simplificada,
-  'a11y-hipervinculos': store.state.sisdaiAccesibilidad.enlaces_subrayados,
-}))
-
-function mutarAccesibilidad({ accion }) {
-  store.commit(`sisdaiAccesibilidad/${accion}`)
-}
-
-function limpiarClasesAccesibles() {
-  store.commit('sisdaiAccesibilidad/limpiarClasesAccesibles')
-}
 
 const infoDespliegue = {
   version_proyecto: process.env.PACKAGE_VERSION,
@@ -28,13 +13,15 @@ const infoDespliegue = {
 <template>
   <div
     id="app"
-    :class="a11yClass"
+    :class="store.getters['accesibilidad/clasesAccesibles']"
   >
     <SisdaiNavegacionGobMx />
     <NavegacionPrincipalBase />
     <SisdaiMenuAccesibilidad
-      @alSeleccionarOpcion="mutarAccesibilidad"
-      @restablecer="limpiarClasesAccesibles"
+      @alSeleccionarOpcion="
+        ({ accion }) => store.commit(`accesibilidad/${accion}`)
+      "
+      @restablecer="store.commit('accesibilidad/limpiarClasesAccesibles')"
     />
     <router-view />
     <SisdaiBotonFlotante
