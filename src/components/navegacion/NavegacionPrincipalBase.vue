@@ -46,20 +46,6 @@
           >Preguntas Frecuentes</router-link
         >
       </li>
-      <li>
-        <router-link
-          class="nav-hipervinculo"
-          to="/herramientas/intro"
-          >Herramientas</router-link
-        >
-      </li>
-      <li>
-        <router-link
-          class="nav-hipervinculo"
-          to="/acerca-de"
-          >Acerca de</router-link
-        >
-      </li>
     </ul>
   </SisdaiNavegacionPrincipal>
 </template>
