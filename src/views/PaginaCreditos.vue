@@ -1,3 +1,11 @@
+<script setup>
+import p from '@/assets/data/creditos-personas-ejemplo.json'
+import i from '@/assets/data/creditos-instituciones-ejemplo.json'
+
+const personas = p
+const instituciones = i
+</script>
+
 <template>
   <div class="contenedor tmp-contendor-chico m-y-10">
     <h1>Créditos</h1>
@@ -70,21 +78,6 @@
     </div>
   </div>
 </template>
-
-<script>
-import personas from '@/assets/data/creditos-personas-ejemplo.json'
-import instituciones from '@/assets/data/creditos-instituciones-ejemplo.json'
-
-export default {
-  name: 'PaginaCreditos',
-  data() {
-    return {
-      personas: personas,
-      instituciones: instituciones,
-    }
-  },
-}
-</script>
 
 <style>
 .tmp-contendor-chico {

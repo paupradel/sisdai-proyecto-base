@@ -1,3 +1,9 @@
+<script setup>
+import informacion from '@/assets/data/preguntas-frecuentes-ejemplo.json'
+
+const preguntas = informacion
+</script>
+
 <template>
   <div class="contenedor ancho-lectura m-y-10">
     <h1>Preguntas Frecuentes</h1>
@@ -17,16 +23,3 @@
     </div>
   </div>
 </template>
-
-<script>
-import preguntas from '@/assets/data/preguntas-frecuentes-ejemplo.json'
-
-export default {
-  name: 'PaginaPreguntasFrecuentes',
-  data() {
-    return {
-      preguntas: preguntas,
-    }
-  },
-}
-</script>
