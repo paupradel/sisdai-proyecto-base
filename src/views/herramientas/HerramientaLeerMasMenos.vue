@@ -14,7 +14,7 @@
       Una de las ventajas de este botón es la oportunidad de ahorrar espacio en
       el diseño de la interfaz, así como apoyar la jerarquía de los contenidos.
     </p>
-    <vue-code-highlight language="html">
+    <!-- <vue-code-highlight language="html">
       <pre
         class="language-html"
         v-text="
@@ -36,7 +36,7 @@
 </template>`
         "
       ></pre>
-    </vue-code-highlight>
+    </vue-code-highlight> -->
 
     <p class="titulo-seccion">Parámetros</p>
     <p>
@@ -106,7 +106,7 @@
       </template>
     </LeerMasMenos>
 
-    <vue-code-highlight language="html">
+    <!-- <vue-code-highlight language="html">
       <pre
         class="language-html"
         v-text="
@@ -134,7 +134,7 @@
 </template>`
         "
       ></pre>
-    </vue-code-highlight>
+    </vue-code-highlight> -->
 
     <div v-highlight>
       <pre class="language-javascript"><code>&lt;script>
@@ -202,13 +202,13 @@ export default {
 <script>
 import LeerMasMenos from '@/components/herramientas/LeerMasMenos.vue'
 
-import { component as VueCodeHighlight } from 'vue-code-highlight'
-import 'vue-code-highlight/themes/prism-tomorrow.css'
+// import { component as VueCodeHighlight } from 'vue-code-highlight'
+// import 'vue-code-highlight/themes/prism-tomorrow.css'
 
 export default {
   components: {
     LeerMasMenos,
-    VueCodeHighlight,
+    // VueCodeHighlight,
   },
   computed: {
     tieneVistaSimplificada() {

@@ -3,7 +3,6 @@ import VueMatomo from 'vue-matomo'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import VueCodeHighlight from 'vue-code-highlight'
 import SisdaiComponentes from 'sisdai-componentes/src/index'
 
 Vue.use(SisdaiComponentes)
@@ -15,8 +14,6 @@ new Vue({
   store,
   render: h => h(App),
 }).$mount('#app')
-
-Vue.use(VueCodeHighlight) //registers the v-highlight directive
 
 if (process.env.VUE_APP_MATOMO_SITEID !== 0) {
   Vue.use(VueMatomo, {

@@ -38,7 +38,7 @@
     </modal-componente>
     <button @click="$refs.nombre_modal.abrirModal()">Abrir Modal</button>
 
-    <vue-code-highlight language="html">
+    <!-- <vue-code-highlight language="html">
       <pre
         class="language-html"
         v-text="
@@ -56,8 +56,8 @@
 </modal-componente>`
         "
       ></pre>
-    </vue-code-highlight>
-    <vue-code-highlight language="html">
+    </vue-code-highlight> -->
+    <!-- <vue-code-highlight language="html">
       <pre
         class="language-html"
         v-text="
@@ -66,7 +66,7 @@
 </button>>`
         "
       ></pre>
-    </vue-code-highlight>
+    </vue-code-highlight> -->
 
     <p class="subtitulo-pagina">Parámetros</p>
     <p>
@@ -312,7 +312,7 @@
     >
       Modal Grande
     </button>
-    <vue-code-highlight language="html">
+    <!-- <vue-code-highlight language="html">
       <pre
         class="language-html"
         v-text="
@@ -362,7 +362,7 @@
 </button>`
         "
       ></pre>
-    </vue-code-highlight>
+    </vue-code-highlight> -->
     <p>
       El ancho del modal en versión móvil es del 100% de la pantalla y el alto
       es proporcional al contenido del mismo.
@@ -563,13 +563,12 @@
 <script>
 import ModalComponente from '@/components/herramientas/ModalComponente.vue'
 
-import { component as VueCodeHighlight } from 'vue-code-highlight'
-import 'vue-code-highlight/themes/prism-tomorrow.css'
+// import { component as VueCodeHighlight } from 'vue-code-highlight'
+// import 'vue-code-highlight/themes/prism-tomorrow.css'
 
 export default {
   components: {
     ModalComponente,
-    VueCodeHighlight,
   },
   computed: {
     tieneVistaSimplificada() {
