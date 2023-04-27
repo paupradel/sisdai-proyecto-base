@@ -35,7 +35,7 @@ el Sistema de Diseño y Accesibilidad para la Investigación (Sisdai).
   ```
 - levantar el repo
   ```bash
-  npm run serve
+  npm run dev
   ```
 
 ## Para desarrollo
@@ -60,31 +60,30 @@ el Sistema de Diseño y Accesibilidad para la Investigación (Sisdai).
 
 ---
 
-## Actualizaciones de la baseweb
+## Actualizaciones del sisdai-proyecto-base
 
-1. Agregar la baseweb como repositorio remoto
+1. Agregar el sisdai-proyecto-base repositorio remoto
 
    ```bash
-   git remote add baseweb <URL_DEL_REPOSITORIO>
+   git remote add sisdai-proyecto-base <URL_DEL_REPOSITORIO>
    ```
 
 2. Configurar el repositorio remoto para no jalar los tags ni heads
 
    ```bash
-   git config remote.baseweb.fetch '+refs/heads/*:refs/heads/*'
-   git config remote.baseweb.tagopt --no-tags
+   git config remote.sisdai-proyecto-base.fetch '+refs/heads/*:refs/heads/*'
+   git config remote.sisdai-proyecto-base.tagopt --no-tags
    ```
 
-3. Traer los ultimos cambios de la baseweb
+3. Traer los ultimos cambios del sisdai-proyecto-base
 
    ```bash
-   git fetch baseweb --no-tags
-
+   git fetch sisdai-proyecto-base --no-tags
    ```
 
-4. Jalar los últimos cambios de la baseweb
+4. Jalar los últimos cambios del sisdai-proyecto-base
    ```bash
-   git pull baseweb main
+   git pull sisdai-proyecto-base main
    ```
 5. Resolver los conflictos que existan en local
 6. Probar en local que se levante correctamente todo
