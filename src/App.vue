@@ -17,12 +17,7 @@ const infoDespliegue = {
   >
     <SisdaiNavegacionGobMx />
     <NavegacionPrincipalBase />
-    <SisdaiMenuAccesibilidad
-      @alSeleccionarOpcion="
-        ({ accion }) => store.commit(`accesibilidad/${accion}`)
-      "
-      @restablecer="store.commit('accesibilidad/limpiarClasesAccesibles')"
-    />
+    <SisdaiMenuAccesibilidad :objetoStore="store" />
     <router-view />
     <SisdaiBotonFlotante
       :enlaces="[
