@@ -1,5 +1,5 @@
 <script setup>
-import store from '@/store/index.js'
+import store from '@/store'
 
 import NavegacionPrincipalBase from './components/navegacion/NavegacionPrincipalBase.vue'
 
