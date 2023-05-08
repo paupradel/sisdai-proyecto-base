@@ -86,6 +86,7 @@ el Sistema de Diseño y Accesibilidad para la Investigación (Sisdai).
    git pull sisdai-proyecto-base main
    ```
 5. Resolver los conflictos que existan en local
+
 6. Probar en local que se levante correctamente todo
 
 ## Licencia
