@@ -1,7 +1,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue2-helpers/vue-router'
-import personas from '@/assets/data/creditos-personas-ejemplo.json'
+import personas from '@/assets/data/creditos/personas-ejemplo.json'
 
 const route = useRoute()
 
