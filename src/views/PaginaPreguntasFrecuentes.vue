@@ -1,7 +1,5 @@
 <script setup>
-import informacion from '@/assets/data/preguntas-frecuentes-ejemplo.json'
-
-const preguntas = informacion
+import preguntas from '@/assets/data/preguntas/frecuentes-ejemplo.json'
 </script>
 
 <template>

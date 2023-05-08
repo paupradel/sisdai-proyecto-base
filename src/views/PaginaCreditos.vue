@@ -1,9 +1,6 @@
 <script setup>
-import p from '@/assets/data/creditos-personas-ejemplo.json'
-import i from '@/assets/data/creditos-instituciones-ejemplo.json'
-
-const personas = p
-const instituciones = i
+import personas from '@/assets/data/creditos/personas-ejemplo.json'
+import instituciones from '@/assets/data/creditos/instituciones-ejemplo.json'
 </script>
 
 <template>

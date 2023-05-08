@@ -17,7 +17,6 @@ el Sistema de Diseño y Accesibilidad para la Investigación (Sisdai).
 
   ```bash
   git clone --single-branch --no-tags <URL_DEL_REPOSITORIO>
-
   ```
 
 - actualizar en el pagkage el nombre del proyecto y reiniciar la versión
@@ -25,7 +24,6 @@ el Sistema de Diseño y Accesibilidad para la Investigación (Sisdai).
   ```bash
   "name": "nombre-del-proyecto-nuevo",
   "version": "0.1.0",
-
   ```
 
 - crear el `.env` en base al `.env.example`
@@ -82,9 +80,11 @@ el Sistema de Diseño y Accesibilidad para la Investigación (Sisdai).
    ```
 
 4. Jalar los últimos cambios del sisdai-proyecto-base
+
    ```bash
    git pull sisdai-proyecto-base main
    ```
+
 5. Resolver los conflictos que existan en local
 
 6. Probar en local que se levante correctamente todo
