@@ -1,4 +1,4 @@
-<template>
+<!--<template>
   <div class="contenedor-accesibilidad" :class="{'show':true}">
     <button
       aria-labelledby="a11y-titulo"
@@ -29,12 +29,12 @@
       </button>
       <button class="boton-accesibilidad" 
         @click="incrementarFuente">
-        <!-- <span class="icono-restablecer icono-4"></span> -->
+        <span class="icono-restablecer icono-4"></span>
         <span>Incrementar fuente</span>
       </button>
       <button class="boton-accesibilidad" 
         @click="reducirFuente">
-        <!-- <span class="icono-restablecer icono-4"></span> -->
+        <span class="icono-restablecer icono-4"></span>
         <span>Disminuir fuente</span>
       </button>
       <button class="boton-accesibilidad" 
@@ -79,16 +79,31 @@
     }
   };
 </script>
-
+-->
 <style lang="scss" scoped>
-.a11y-simplificada button:not(.hipervinculo-gobmx):not(.hipervinculo-conacyt):not(.nav-boton):not(.nav-boton-icon):not(.nav-boton-menu):not(.nav-boton-submenu):not(.nav-boton-regresar) {
+.a11y-simplificada
+  button:not(.hipervinculo-gobmx):not(.hipervinculo-conacyt):not(
+    .nav-boton
+  ):not(.nav-boton-icon):not(.nav-boton-menu):not(.nav-boton-submenu):not(
+    .nav-boton-regresar
+  ) {
   color: var(--tipografia-color);
 }
-.a11y-simplificada button:focus:not(.hipervinculo-gobmx):not(.hipervinculo-conacyt):not(.nav-boton):not(.nav-boton-icon):not(.nav-boton-menu):not(.nav-boton-submenu):not(.nav-boton-regresar) {
+.a11y-simplificada
+  button:focus:not(.hipervinculo-gobmx):not(.hipervinculo-conacyt):not(
+    .nav-boton
+  ):not(.nav-boton-icon):not(.nav-boton-menu):not(.nav-boton-submenu):not(
+    .nav-boton-regresar
+  ) {
   color: var(--tipografia-color);
   box-shadow: 0 0 0 2px transparent;
 }
-.a11y-simplificada button:hover:not(.hipervinculo-gobmx):not(.hipervinculo-conacyt):not(.nav-boton):not(.nav-boton-icon):not(.nav-boton-menu):not(.nav-boton-submenu):not(.nav-boton-regresar) {
+.a11y-simplificada
+  button:hover:not(.hipervinculo-gobmx):not(.hipervinculo-conacyt):not(
+    .nav-boton
+  ):not(.nav-boton-icon):not(.nav-boton-menu):not(.nav-boton-submenu):not(
+    .nav-boton-regresar
+  ) {
   color: var(--tipografia-color);
   box-shadow: 0 0 0 2px transparent;
 }
@@ -119,7 +134,7 @@
     }
     &:hover,
     &:focus {
-      box-shadow: 0 0 0 5px rgba(29, 116, 230, .25);
+      box-shadow: 0 0 0 5px rgba(29, 116, 230, 0.25);
     }
     .icono-accesibilidad {
       background-color: #fff;
@@ -127,17 +142,17 @@
       width: 40px;
       border-radius: 50%;
       color: #1d74e6;
-    }    
+    }
   }
   #menu-accesibilidad {
-    background: #F6F6F6;
+    background: #f6f6f6;
     box-shadow: 1px 1px 2px 0 var(--sombra);
     margin: 0;
     padding: 0;
     overflow: hidden;
     max-height: 0;
     width: 0;
-    transition: width .27s ease-in, max-height .2s ease-in .1s;
+    transition: width 0.27s ease-in, max-height 0.2s ease-in 0.1s;
     &.abierto {
       padding: 8px 0;
       width: 200px;
@@ -158,13 +173,13 @@
       display: flex;
       gap: 8px;
       width: 100%;
-      font-size: .75rem;
+      font-size: 0.75rem;
       font-weight: 600;
       text-align: left;
       padding: 8px 16px;
       &:hover,
       &:focus {
-        background: #DDDDDD;
+        background: #dddddd;
       }
       .icono-4 {
         padding: 0;

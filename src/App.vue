@@ -1,54 +1,46 @@
-<template>
-  <div id="app" :class="a11yClass">
-    <NavegacionGobMx />
-    <NavegacionPrincipal />
-    <MenuAccesibilidad />
-    <router-view/>
-    <BotonFlotante
-      texto="Descarga"
-      enlace="#"
-     />
-    <InfoDespliegue />
-    <PiePaginaConacyt />
-    <PiePaginaGobMx />
-  </div>
-</template>
+<script setup>
+import store from '@/store'
 
-<script>
-import NavegacionGobMx from '@/components/navegacion/NavegacionGobMx.vue'
-import NavegacionPrincipal from '@/components/navegacion/NavegacionPrincipal.vue'
-import PiePaginaGobMx from './components/piepagina/PiePaginaGobMx.vue'
-import PiePaginaConacyt from './components/piepagina/PiePaginaConacyt.vue'
-import MenuAccesibilidad from './components/accesibilidad/MenuAccesibilidad.vue'
-import BotonFlotante from './components/herramientas/BotonFlotante.vue'
-import InfoDespliegue from "@/components/herramientas/InfoDespliegue.vue"
+import NavegacionPrincipalBase from './components/navegacion/NavegacionPrincipalBase.vue'
 
-export default {
-  components: {
-    NavegacionGobMx,
-    NavegacionPrincipal,
-    PiePaginaGobMx,
-    PiePaginaConacyt,
-    MenuAccesibilidad,
-    BotonFlotante,
-    InfoDespliegue
-  },
-  computed: {
-    a11yClass() {
-      return {
-        'a11y-tipografia': this.$store.getters.tieneTipografiaAtkinson,
-        'a11y-simplificada': this.$store.getters.tieneVistaSimplificada,
-        'a11y-hipervinculos': this.$store.getters.tieneEnlacesSubrayados,
-      };
-    }
-  }
+const infoDespliegue = {
+  version_proyecto: process.env.PACKAGE_VERSION,
+  actualizacion_proyecto: process.env.DATE_DEPLOY,
+  entorno_proyecto: process.env.ENV_DEPLOY,
 }
 </script>
 
-<style lang="scss">
-  @import 'node_modules/sisdai-css/src/eni.scss';
+<template>
+  <div
+    id="app"
+    :class="store.getters['accesibilidad/clasesAccesibles']"
+  >
+    <SisdaiNavegacionGobMx />
+    <NavegacionPrincipalBase />
+    <SisdaiMenuAccesibilidad :objetoStore="store" />
+    <router-view />
+    <SisdaiBotonFlotante
+      :enlaces="[
+        {
+          clasesCss: 'icono-resaltado',
+          icono: 'icono-documento icono-3',
+        },
+      ]"
+    />
+    <SisdaiInfoDeDespliegue
+      :versionProyecto="infoDespliegue.version_proyecto"
+      :entornoProyecto="infoDespliegue.entorno_proyecto"
+      :actualizacionProyecto="infoDespliegue.actualizacion_proyecto"
+    />
+    <SisdaiPiePaginaConacyt />
+    <SisdaiPiePaginaGobMx />
+  </div>
+</template>
 
-  .overflow-hidden {
-    overflow: hidden;
-  }
+<style lang="scss">
+@import 'node_modules/sisdai-css/src/eni.scss';
+
+.overflow-hidden {
+  overflow: hidden;
+}
 </style>
