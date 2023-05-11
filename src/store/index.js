@@ -12,6 +12,7 @@ accesibilidad.getters.clasesAccesibles = state => ({
   'a11y-simplificada': state.vista_simplificada,
   'a11y-hipervinculos': state.enlaces_subrayados,
   'a11y-tamanio': state.cambio_tipografia,
+  'a11y-zoom': state.cambio_zoom,
 })
 
 accesibilidad.mutations.incrementarTamanioTipografia = function (state) {
@@ -26,6 +27,7 @@ accesibilidad.mutations.incrementarTamanioTipografia = function (state) {
     '--tipografia-tamanio',
     tamanio_arriba
   )
+  console.log(state.tamanio_fuente + 'px')
 }
 accesibilidad.mutations.reducirTamanioTipografia = function (state) {
   state.cambio_tipografia = true
@@ -46,6 +48,21 @@ accesibilidad.mutations.restablecer = function (state) {
   state.enlaces_subrayados = false
   state.cambio_tipografia = false
   document.documentElement.style.setProperty('--tipografia-tamanio', '16')
+  document.documentElement.style.scale = 1
+}
+
+accesibilidad.state.zoom = 1
+accesibilidad.state.cambio_zoom = false
+
+accesibilidad.mutations.incrementarZoom = function (state) {
+  state.cambio_zoom = true
+  state.zoom += 0.1
+  document.documentElement.style.scale = state.zoom
+  // document.documentElement.style.zoom = state.zoom
+  // document.documentElement.style.MozTransform = `scale(${state.zoom})`
+  // document.documentElement.style.WebkitTransform = `scale(${state.zoom})`
+  console.log(parseInt(state.zoom * 100) + '%')
+  console.log(state.tamanio_fuente + 'px')
 }
 
 export default new Vuex.Store({

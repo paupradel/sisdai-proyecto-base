@@ -40,6 +40,13 @@ const reducirTamanioTipo = {
   icono: 'icono-estrella',
   titulo: 'Reducir tamanio tipografia',
 }
+
+const incrementarZoom = {
+  accion: 'incrementarZoom',
+  claseCss: 'a11y-zoom',
+  icono: 'icono-maximizar',
+  titulo: 'Incrementar zoom',
+}
 </script>
 
 <template>
@@ -51,7 +58,11 @@ const reducirTamanioTipo = {
     <NavegacionPrincipalBase />
     <SisdaiMenuAccesibilidad
       :objetoStore="store"
-      :agregarOpciones="[incrementarTamanioTipo, reducirTamanioTipo]"
+      :agregarOpciones="[
+        incrementarTamanioTipo,
+        reducirTamanioTipo,
+        incrementarZoom,
+      ]"
       @alSeleccionarOpcion="agregarClases"
       @restablecer="clasesAccesibles = []"
     />
