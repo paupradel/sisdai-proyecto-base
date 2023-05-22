@@ -7,7 +7,7 @@
       <nav class="columna-8 columna-4-esc">
         <p class="titulo-lista">Enlaces</p>
         <ul class="lista-plana">
-          <li><a class="hipervinculo-gobmx" href="https://participa.gob.mx/" target="_blank" rel="noopener">Participa</a></li>
+          <li><a class="hipervinculo-gobmx" href="https://www.participa.gob.mx/" target="_blank" rel="noopener">Participa</a></li>
           <li><a class="hipervinculo-gobmx" href="https://www.gob.mx/publicaciones" target="_blank" rel="noopener">Publicaciones Oficiales</a></li>
           <li><a class="hipervinculo-gobmx" href="http://www.ordenjuridico.gob.mx/" target="_blank" rel="noopener">Marco Jurídico</a></li>
           <li><a class="hipervinculo-gobmx" href="https://consultapublicamx.inai.org.mx/vut-web/faces/view/consultaPublica.xhtml" target="_blank" rel="noopener">Plataforma Nacional de Transparencia</a></li>

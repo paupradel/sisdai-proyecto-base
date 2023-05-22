@@ -1,8 +1,8 @@
 <template>
   <nav class="navegacion navegacion-conacyt navegacion-pegada">
     <div class="nav-contenedor-identidad">
-      <a href="https://conacyt.mx/" target="_blank" class="nav-hiperviculo-logo">
-        <img class="nav-logo" width="130" height="38" src="@/assets/img/conacyt-azul.svg" alt="Conacyt.">
+      <a href="https://conahcyt.mx/" target="_blank" class="nav-hiperviculo-logo">
+        <img class="nav-logo" width="130" height="38" src="@/assets/img/conahcyt-azul.svg" alt="Conahcyt.">
       </a>
       <button @click="toggleMenu" class="nav-boton-menu" :class="{ 'abierto': estaNavegacionPrincipalAbierta }">
         <span class="nav-icono-menu"></span>
